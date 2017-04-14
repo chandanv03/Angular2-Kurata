@@ -7,16 +7,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var WelcomeComponent = (function () {
-    function WelcomeComponent() {
-        this.pageTitle = 'Welcome';
+var ProductFilterPipe = (function () {
+    function ProductFilterPipe() {
     }
-    return WelcomeComponent;
+    ProductFilterPipe.prototype.transform = function (value, filterBy) {
+        filterBy = filterBy ? filterBy.toLocaleLowerCase() : null;
+        return filterBy ? value.filter(function (product) {
+            return product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1;
+        }) : value;
+    };
+    return ProductFilterPipe;
 }());
-WelcomeComponent = __decorate([
-    core_1.Component({
-        templateUrl: 'app/home/welcome.component.html'
+ProductFilterPipe = __decorate([
+    core_1.Pipe({
+        name: 'productFilter'
     })
-], WelcomeComponent);
-exports.WelcomeComponent = WelcomeComponent;
-//# sourceMappingURL=welcome.component.js.map
+], ProductFilterPipe);
+exports.ProductFilterPipe = ProductFilterPipe;
+//# sourceMappingURL=product-filter.pipe.js.map

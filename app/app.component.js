@@ -7,16 +7,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var WelcomeComponent = (function () {
-    function WelcomeComponent() {
-        this.pageTitle = 'Welcome';
+var AppComponent = (function () {
+    function AppComponent() {
+        this.pageTitle = 'Acme Product Management';
     }
-    return WelcomeComponent;
+    return AppComponent;
 }());
-WelcomeComponent = __decorate([
+AppComponent = __decorate([
     core_1.Component({
-        templateUrl: 'app/home/welcome.component.html'
+        selector: 'pm-app',
+        template: "\n        <div>\n            <h1>{{pageTitle}}</h1>\n            <pm-products></pm-products>\n        </div>\n    "
     })
-], WelcomeComponent);
-exports.WelcomeComponent = WelcomeComponent;
-//# sourceMappingURL=welcome.component.js.map
+], AppComponent);
+exports.AppComponent = AppComponent;
+//# sourceMappingURL=app.component.js.map
